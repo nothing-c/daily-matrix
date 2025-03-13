@@ -7,6 +7,8 @@ Every day at 0000 UTC, grabs the matrix corresponding to that day and sets args 
 
 Input on webpage is TBD
 
+** [[https://github.com/apurvagandhi/Ravens-Progressive-Matrices][current matrix sauce]]
+** [[https://paperswithcode.com/dataset/raven-fair][more matrices]]
 
 * Command log
 ~dotnet new web -lang "F#"~ to init
