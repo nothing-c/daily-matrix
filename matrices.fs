@@ -1,4 +1,4 @@
-[("./Ravens-Progressive-Matrices/Problems\Basic Problems B\Basic Problem B-01\Basic Problem B-01.PNG",
+let rawmatrices = [("./Ravens-Progressive-Matrices/Problems\Basic Problems B\Basic Problem B-01\Basic Problem B-01.PNG",
   "2");
  ("./Ravens-Progressive-Matrices/Problems\Basic Problems B\Basic Problem B-02\Basic Problem B-02.PNG",
   "5");
