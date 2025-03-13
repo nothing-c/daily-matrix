@@ -1,0 +1,4 @@
+#+TITLE: Raven Wordle
+
+#+ATTR_ORG: :width 70% :height 70% :align center
+[[./Ravens-Progressive-Matrices/Problems/Basic Problems B/Basic Problem B-01/Basic Problem B-01.PNG]]
