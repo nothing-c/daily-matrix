@@ -1,0 +1,12 @@
+* wordle but for ravens progressive matrices
+Using F# & ASP.NET core
+
+** Structure
+Static set of Ravens-style matrices corresponding to days in a cycle (determined by the number of matrices I can find)
+Every day at 0000 UTC, grabs the matrix corresponding to that day and sets args according to which of the given options corresponds to the correct choice
+
+Input on webpage is TBD
+
+
+* Command log
+~dotnet new web -lang "F#"~ to init
