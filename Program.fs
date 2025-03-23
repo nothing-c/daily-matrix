@@ -5,7 +5,6 @@ open System.Text
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Hosting
 open Microsoft.AspNetCore.Http
-//open Microsoft.AspNet.StaticFiles
 
 let mainpage = File.ReadAllText("page.html")
 
@@ -22,15 +21,9 @@ let main args =
     app.UseStaticFiles() |> ignore
 
     let (matrixpath, correct) = Matrices.rawmatrices[rand.Next(Matrices.rawmatrices.Length)]
-    // let mutable correct = snd dailymatrix
     // All the images are PNGs
     app.MapGet("/matrix", Func<_>(fun () -> Results.Bytes(File.ReadAllBytes("wwwroot/" + matrixpath), "image/png"))) |> ignore
-
-    // app.MapGet("/", Func<_>(fun () -> Results.Text(mainpage,"text/html",Encoding.UTF8) )) |> ignore
-    // /answer?answer=...
-
     app.MapGet("/answer", Func<HttpContext, string>(fun x -> answer x correct)) |> ignore
-    // so Func<arg, arg..., returntype>
 
     app.Run()
 
