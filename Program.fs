@@ -24,7 +24,7 @@ let main args =
     let (matrixpath, correct) = Matrices.rawmatrices[rand.Next(Matrices.rawmatrices.Length)]
     // let mutable correct = snd dailymatrix
     // All the images are PNGs
-    app.MapGet("/matrix", Func<_>(fun () -> Results.Bytes(File.ReadAllBytes(matrixpath), "image/png"))) |> ignore
+    app.MapGet("/matrix", Func<_>(fun () -> Results.Bytes(File.ReadAllBytes("wwwroot/" + matrixpath), "image/png"))) |> ignore
 
     // app.MapGet("/", Func<_>(fun () -> Results.Text(mainpage,"text/html",Encoding.UTF8) )) |> ignore
     // /answer?answer=...
