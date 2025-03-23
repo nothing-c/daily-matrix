@@ -6,7 +6,6 @@ Static set of Ravens-style matrices corresponding to days in a cycle (determined
 Every day at 0000 UTC, grabs the matrix corresponding to that day and sets args according to which of the given options corresponds to the correct choice
 
 ** where we are rn
-getting a nice lil victory/failure image
 Favicon (misatobeer!)
 
 ** [[https://github.com/apurvagandhi/Ravens-Progressive-Matrices][current matrix sauce]]
