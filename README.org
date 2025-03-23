@@ -13,8 +13,7 @@ Number box -> issues request via HTMX to ~/answer~ with the answer
 #+end_src
 
 ** where we are rn
-[[./render.fs]] rendering the page (currently running static)
-[[./Program.fs]] picking a matrix (I might do a loop based on if it's 0000 or not restarting the server. Dunno.)
+[[./Program.fs]] running the actual server (I might do a loop based on if it's 0000 or not restarting the server. Dunno.)
 
 ** form (have to do this to make the input work, I think)
 #+begin_src html
