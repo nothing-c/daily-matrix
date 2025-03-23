@@ -12,7 +12,7 @@ let rand = new Random()
 let answer (context: HttpContext) (correct: string) =
     let a = context.Request.Query in
     let actualanswer = (Seq.head a).Value |> Seq.head
-    if actualanswer = correct then "Yay" else "Boo"
+    if actualanswer = correct then "Correct!" else "Incorrect :("
 
 [<EntryPoint>]
 let main args =
