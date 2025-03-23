@@ -13,6 +13,9 @@ let answer (context: HttpContext) (correct: string) =
     let actualanswer = (Seq.head a).Value |> Seq.head
     if actualanswer = correct then "Correct!" else "Incorrect :("
 
+    // (fun x -> x.Response.Redirect("index.html"))
+let redirect (context: HttpContext) = context.Response.Redirect("index.html")
+  
 [<EntryPoint>]
 let main args =
     let builder = WebApplication.CreateBuilder(args)
@@ -23,6 +26,8 @@ let main args =
     // All the images are PNGs
     app.MapGet("/matrix", Func<_>(fun () -> Results.Bytes(File.ReadAllBytes("wwwroot/" + matrixpath), "image/png"))) |> ignore
     app.MapGet("/answer", Func<HttpContext, string>(fun x -> answer x correct)) |> ignore
+    // Redirect everything to main page
+    app.MapFallback(Func<HttpContext, _>redirect) |> ignore
 
     app.Run()
 
