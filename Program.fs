@@ -6,7 +6,6 @@ open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Hosting
 open Microsoft.AspNetCore.Http
 
-let mainpage = File.ReadAllText("page.html")
 let rand = new Random()
 
 let answer (context: HttpContext) (correct: string) =
