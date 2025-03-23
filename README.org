@@ -1,4 +1,4 @@
-* wordle but for ravens progressive matrices
+* Daily Matrix: Wordle but for Raven's Progressive Matrices
 Using F# & ASP.NET core
 
 ** Structure
