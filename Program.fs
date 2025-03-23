@@ -9,18 +9,23 @@ open Microsoft.AspNetCore.Http
 
 let mainpage = File.ReadAllText("page.html")
 
-let answer (context: HttpContext) (correct: int) =
+let answer (context: HttpContext) (correct: string) =
     let a = context.Request.Query in
-    let actualanswer = (Seq.head a).Value |> Seq.head |> int in
+    let actualanswer = (Seq.head a).Value |> Seq.head
     if actualanswer = correct then "Yay" else "Boo"
 
 [<EntryPoint>]
 let main args =
+    let rand = new Random()
     let builder = WebApplication.CreateBuilder(args)
     let app = builder.Build()
     app.UseStaticFiles() |> ignore
 
-    let correct = 0
+    let (matrixpath, correct) = Matrices.rawmatrices[rand.Next(Matrices.rawmatrices.Length)]
+    // let mutable correct = snd dailymatrix
+    // All the images are PNGs
+    app.MapGet("/matrix", Func<_>(fun () -> Results.Bytes(File.ReadAllBytes(matrixpath), "image/png"))) |> ignore
+
     // app.MapGet("/", Func<_>(fun () -> Results.Text(mainpage,"text/html",Encoding.UTF8) )) |> ignore
     // /answer?answer=...
 
