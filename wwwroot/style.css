@@ -215,3 +215,8 @@ button:hover {
     font-size: 1.3rem;
   }
 }
+
+img {
+   -webkit-filter: invert(1);
+   filter: invert(1);
+}
