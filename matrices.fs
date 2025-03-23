@@ -1,6 +1,4 @@
-open System
-open System.IO
-
+module Matrices
 type MatrixData = (string * string)
 
 let rawmatrices = [("./Ravens-Progressive-Matrices/Problems\Basic Problems B\Basic Problem B-01\Basic Problem B-01.PNG",
