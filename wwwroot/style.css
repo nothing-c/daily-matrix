@@ -12,6 +12,7 @@
   --absent: #444444;
   --key-bg: #31087B;
   --key-text: #ffffff;
+  --neon-red: #ff2f30;
 }
 
 * {
@@ -40,7 +41,7 @@ body {
   gap: 20px;
 }
 
-header {
+.header {
   width: 100%;
   padding: 10px 0;
   border-bottom: 2px solid var(--neon-blue);
@@ -220,3 +221,30 @@ img {
    -webkit-filter: invert(1);
    filter: invert(1);
 }
+
+.fail {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 
+    0 0 5px var(--neon-red),
+    0 0 10px var(--neon-red),
+    0 0 20px var(--neon-pink);
+  animation: glitch 0.9s linear infinite;
+}
+
+.success {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 
+    0 0 5px var(--neon-blue),
+    0 0 10px var(--neon-pink),
+    0 0 20px var(--neon-blue);
+  animation: glitch 0.9s linear infinite;
+}
+
