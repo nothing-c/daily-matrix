@@ -5,13 +5,6 @@ Using F# & ASP.NET core
 Static set of Ravens-style matrices corresponding to days in a cycle (determined by the number of matrices I can find)
 Every day at 0000 UTC, grabs the matrix corresponding to that day and sets args according to which of the given options corresponds to the correct choice
 
-** Input on webpage
-Number box -> issues request via HTMX to ~/answer~ with the answer
-
-#+begin_src html
-"<script src=\"https://unpkg.com/htmx.org@2.0.4\" integrity=\"sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+\" crossorigin=\"anonymous\"></script>"
-#+end_src
-
 ** where we are rn
 getting a nice lil victory/failure image
 Favicon (misatobeer!)
