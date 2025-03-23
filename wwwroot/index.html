@@ -4,35 +4,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Raven Wordle</title>
-    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-      <div id="content" class="content">
-	<h1 class="title" align="center">Raven Wordle</h1>
-	<div id="matrix" class="figure" align="center">
-	  <p>
-	    <img src="/matrix" alt="Matrix" style='height: 50%; width: 50%; object-fit: contain' />
-	  </p>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Raven Wordle</title>
+      <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      </head>
+      <body>
+	<div id="content" class="content">
+	  <h1 class="title" align="center">Raven Wordle</h1>
+	  <div id="matrix" class="figure" align="center">
+	    <p>
+	      <img src="/matrix" alt="Matrix" style='height: 50%; width: 50%; object-fit: contain' />
+	    </p>
+	  </div>
+
+	  <div id="response" align="center">
+	    <p>
+	      Your answer:
+	    </p>
+	    <input
+	      type="number-to-text"
+	      id="answer"
+	      name="answer"
+	      required
+	      minlength="1"
+	      maxlength="1"
+	      size="10" />
+	    <button hx-get="/answer" hx-target="#response" hx-include="#answer">Guess</button>
+	  </div>
 	</div>
 
-	<div id="response" align="center">
+	<div id="info">
 	  <p>
-	    Your answer:
+	    An <a href="https://nothing-c.neocities.org/">N-C Softworks</a> production
 	  </p>
-	  <input
-	    type="number-to-text"
-	    id="answer"
-	    name="answer"
-	    required
-	    minlength="1"
-	    maxlength="1"
-	    size="10" />
-	  <button hx-get="/answer" hx-target="#response" hx-include="#answer">Guess</button>
 	</div>
-      </div>
-    </body>
-  </html>
+      </body>
+    </html>
