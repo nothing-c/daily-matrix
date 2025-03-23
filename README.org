@@ -13,7 +13,6 @@ Number box -> issues request via HTMX to ~/answer~ with the answer
 #+end_src
 
 ** where we are rn
-[[./Program.fs]] running the actual server (I might do a loop based on if it's 0000 or not restarting the server. Dunno.)
 getting a nice lil victory/failure image
 Favicon (misatobeer!)
 
