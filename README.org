@@ -37,3 +37,7 @@ app.MapPost ("/answer{querystring}", (* Something here *))
 ~dotnet new web -lang "F#"~ to init
 
 ~dotnet run~ to run
+
+    // app.MapGet("/", Func<_>(fun () -> Results.Text(mainpage,"text/html",Encoding.UTF8) )) |> ignore
+    // /answer?answer=...
+    // so Func<arg, arg..., returntype>
