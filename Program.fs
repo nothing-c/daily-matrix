@@ -11,9 +11,8 @@ let rand = new Random()
 let answer (context: HttpContext) (correct: string) =
     let a = context.Request.Query in
     let actualanswer = (Seq.head a).Value |> Seq.head
-    if actualanswer = correct then "Correct!" else "Incorrect :("
+    if actualanswer = correct then "<h2 class=\"success\">Correct</h2>" else "<h2 class=\"fail\">Incorrect</h2>"
 
-    // (fun x -> x.Response.Redirect("index.html"))
 let redirect (context: HttpContext) = context.Response.Redirect("index.html")
   
 [<EntryPoint>]
