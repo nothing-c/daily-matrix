@@ -1,6 +1,9 @@
 * Daily Matrix: Wordle but for Raven's Progressive Matrices
 Using F# & ASP.NET core
 
+** Deployment
+Git clone, then dotnet run (assuming you have .NET core 7+ installed & F#)
+
 ** Structure
 Static set of Ravens-style matrices corresponding to days in a cycle (determined by the number of matrices I can find)
 Every day at 0000 UTC, grabs the matrix corresponding to that day and sets args according to which of the given options corresponds to the correct choice
