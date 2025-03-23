@@ -17,21 +17,6 @@ Number box -> issues request via HTMX to ~/answer~ with the answer
 getting a nice lil victory/failure image
 Favicon (misatobeer!)
 
-** form (have to do this to make the input work, I think)
-#+begin_src html
-<input
-  type="number"
-  id="answer"
-  name="answer"
-  required
-  minlength="1"
-  maxlength="1"
-  size="10" />
-<button hx-get="/answer" hx-target="body" hx-include="#answer">Guess</button>
-
-app.MapPost ("/answer{querystring}", (* Something here *))
-#+end_src
-
 ** [[https://github.com/apurvagandhi/Ravens-Progressive-Matrices][current matrix sauce]]
 ** [[https://paperswithcode.com/dataset/raven-fair][more matrices]]
 
