@@ -22,23 +22,22 @@ let main args =
     app.UseStaticFiles() |> ignore
 
     let mutable (matrixpath, correct) = Matrices.rawmatrices[rand.Next(Matrices.rawmatrices.Length)] //Grab the first one
+    let mutable day = DateTime.UtcNow.DayOfWeek
     // All the images are PNGs
-    app.MapGet("/matrix", Func<_>(fun () -> Results.Bytes(File.ReadAllBytes("wwwroot/" + matrixpath), "image/png"))) |> ignore
+    app.MapGet("/matrix", Func<_>(fun () ->
+                                  if day <> DateTime.UtcNow.DayOfWeek
+                                  then
+                                        day <- DateTime.UtcNow.DayOfWeek
+                                        // full-sending this, so it may do two of the same in a row. Who cares?
+                                        let (matrixpath', correct') = Matrices.rawmatrices[rand.Next(Matrices.rawmatrices.Length)]
+                                        matrixpath <- matrixpath'
+                                        correct <- correct'
+                                  Results.Bytes(File.ReadAllBytes("wwwroot/" + matrixpath), "image/png"))) |> ignore
     app.MapGet("/answer", Func<HttpContext, string>(fun x -> answer x correct)) |> ignore
     // Redirect everything to main page
     app.MapFallback(Func<HttpContext, _>redirect) |> ignore
 
     app.Run()
-
-    let mutable day = DateTime.UtcNow.DayOfWeek
-    while true do
-        if day <> DateTime.UtcNow.DayOfWeek
-        then
-            day <- DateTime.UtcNow.DayOfWeek
-            // full-sending this, so it may do two of the same in a row. Who cares?
-            let (matrixpath', correct') = Matrices.rawmatrices[rand.Next(Matrices.rawmatrices.Length)]
-            matrixpath <- matrixpath'
-            correct <- correct'
 
     0 // Exit code
 
